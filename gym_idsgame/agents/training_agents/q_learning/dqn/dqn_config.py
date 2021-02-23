@@ -12,7 +12,7 @@ class DQNConfig:
     def __init__(self, input_dim: int, attacker_output_dim: int = 33, hidden_dim: int = 64, replay_memory_size: int = 100000,
                  replay_start_size : int = 10000, batch_size: int = 64, num_hidden_layers = 2,
                  target_network_update_freq : int = 10,
-                 gpu : bool = False, tensorboard : bool = False, tensorboard_dir: str = "",
+                 gpu : bool = True, tensorboard : bool = False, tensorboard_dir: str = "",
                  loss_fn : str = "MSE", optimizer : str = "Adam", lr_exp_decay : bool = False,
                  lr_decay_rate : float = 0.96, hidden_activation : str = "ReLU", defender_output_dim: int = 33,
                  state_length = 1, merged_ad_features : bool = False, normalize_features : bool = False,

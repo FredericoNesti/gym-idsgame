@@ -12,3 +12,4 @@ class AgentType(Enum):
     ACTOR_CRITIC_AGENT = 8
     PPO_AGENT = 9
     PPO_OPENAI_AGENT = 10
+    BAYES_ACTOR_CRITIC_AGENT = 11

@@ -19,6 +19,7 @@ from gym_idsgame.agents.training_agents.q_learning.dqn.dqn import DQNAgent
 from gym_idsgame.agents.training_agents.policy_gradient.reinforce.reinforce import ReinforceAgent
 from gym_idsgame.agents.training_agents.policy_gradient.reinforce.reinforce_attacker_bot_agent import ReinforceAttackerBotAgent
 from gym_idsgame.agents.training_agents.policy_gradient.actor_critic.actor_critic import ActorCriticAgent
+from gym_idsgame.agents.training_agents.bayesian_methods.policy_gradient.actor_critic.bayes_actor_critic import BayesActorCriticAgent
 from gym_idsgame.agents.training_agents.policy_gradient.ppo.ppo import PPOAgent
 from gym_idsgame.agents.training_agents.openai_baselines.ppo.ppo import OpenAiPPOAgent
 from gym_idsgame.agents.training_agents.openai_baselines.ppo.ppo_attacker_bot_agent import PPOBaselineAttackerBotAgent
@@ -87,6 +88,8 @@ class Runner:
             attacker = ReinforceAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.ACTOR_CRITIC_AGENT.value:
             attacker = ActorCriticAgent(env, config.pg_agent_config)
+        elif config.attacker_type == AgentType.BAYES_ACTOR_CRITIC_AGENT.value:
+            attacker = BayesActorCriticAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.PPO_AGENT.value:
             attacker = PPOAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.PPO_OPENAI_AGENT.value:
@@ -126,6 +129,8 @@ class Runner:
             defender = ReinforceAgent(env, config.pg_agent_config)
         elif config.defender_type == AgentType.ACTOR_CRITIC_AGENT.value:
             defender = ActorCriticAgent(env, config.pg_agent_config)
+        elif config.defender_type == AgentType.BAYES_ACTOR_CRITIC_AGENT.value:
+            defender = BayesActorCriticAgent(env, config.pg_agent_config)
         elif config.defender_type == AgentType.PPO_AGENT.value:
             defender =  PPOAgent(env, config.pg_agent_config)
         elif config.defender_type == AgentType.PPO_OPENAI_AGENT.value:
@@ -167,6 +172,8 @@ class Runner:
             agent = ReinforceAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.ACTOR_CRITIC_AGENT.value:
             agent = ActorCriticAgent(env, config.pg_agent_config)
+        elif config.attacker_type == AgentType.BAYES_ACTOR_CRITIC_AGENT.value:
+            agent = BayesActorCriticAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.PPO_AGENT.value:
             agent = PPOAgent(env, config.pg_agent_config)
         elif config.attacker_type == AgentType.PPO_OPENAI_AGENT.value:
